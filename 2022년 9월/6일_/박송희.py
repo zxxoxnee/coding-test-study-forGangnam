@@ -1,5 +1,4 @@
 import sys
-sys.stdin = open("20220906_타임어택_백준_16953_A_B.txt", "r")
 from collections import deque
 start, end = map(int, input().split())
 dq = deque()
