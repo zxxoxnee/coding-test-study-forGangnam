@@ -7,6 +7,8 @@ while b > a :
     b = str(b)
     b = int(b[:len(b)-1])
     count += 1
+    if b <= a : break
+  if b <= a : break
   if b % 2 != 0 : 
     print(-1)
     exit(0)
