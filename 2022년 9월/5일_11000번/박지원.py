@@ -13,22 +13,23 @@
 import heapq
 #n입력받기
 n=int(input())
-#우선순위 큐
-queue=[]
-#시작시간 종료시간 입력받기
-for i in range(n):
-    start,end=map(int,input().split())
-    queue.append([start,end]) #쌍으로 리스트에 넣어주기
+time=[]
 
-sr=[] #강의실
-heapq.heappush(sr,queue[0][1]) #우선순위큐에 우선 첫 시작시간에 문 여는 강의실 문 열기
+#강의시간 리스트로 입력받기
+for _ in range(n):
+    s, t = map(int, input().split())
+    time.append((s, t))
+
+#리스트 정렬
+time.sort()
+sr=[] #강의실(우선순위큐)
+heapq.heappush(sr,time[0][1]) #우선순위큐에 우선 첫 시작시간에 문 여는 강의실 문 열기
 
 for i in range(1,n):
-    if queue[i][0]<sr[0]:#회의 종료 시간보다 다음 회의 시간이 빠르다면
-        heapq.heappush(sr,queue[i][1]) #새로운 강의실 개설
-    else:#회의 종료 시간보다 다음 회의 시간이 늦다면, (즉 연장으로 강의실 가능)
+    if time[i][0] >= sr[0]:
         heapq.heappop(sr)#새로운 회의로 시간 변경해야할거니까(즉, 갯수는 똑같게)
-        heapq.heappush(sr,queue[i][1])#새 시간 push
-
+        heapq.heappush(sr,time[i][1])#새 시간 push
+    else:
+        heapq.heappush(sr,time[i][1])
 
 print(len(sr))
