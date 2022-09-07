@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3dec7e4-0103-4b15-bdd5-486cf2c696d7" name="Default Changelist" comment="//박지원 20220905 pass" />
+    <list default="true" id="d3dec7e4-0103-4b15-bdd5-486cf2c696d7" name="Default Changelist" comment="//박지원 20220905 pass">
+      <change beforePath="$PROJECT_DIR$/.idea/coding-test-study-forGangnam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/coding-test-study-forGangnam.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
