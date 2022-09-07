@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3dec7e4-0103-4b15-bdd5-486cf2c696d7" name="Default Changelist" comment="//박지원 20220905 pass" />
+    <list default="true" id="d3dec7e4-0103-4b15-bdd5-486cf2c696d7" name="Default Changelist" comment="//박지원 20220907 runtime error">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,6 +91,7 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <configuration default="true" type="tests" factoryName="Autodetect">
       <module name="coding-test-study-forGangnam" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -104,6 +107,8 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+=======
+>>>>>>> af333397ef3ede2a77164f211100c833dd3965c7
     <configuration name="우민지 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="coding-test-study-forGangnam" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -325,6 +330,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="//박지원 20220906 pass" />
     <MESSAGE value="//박지원 20220905 pass" />
-    <option name="LAST_COMMIT_MESSAGE" value="//박지원 20220905 pass" />
+    <MESSAGE value="//박지원 20220907 runtime error" />
+    <option name="LAST_COMMIT_MESSAGE" value="//박지원 20220907 runtime error" />
   </component>
 </project>
