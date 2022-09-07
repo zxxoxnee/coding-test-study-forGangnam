@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="d3dec7e4-0103-4b15-bdd5-486cf2c696d7" name="Default Changelist" comment="//박지원 20220905 pass">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="d3dec7e4-0103-4b15-bdd5-486cf2c696d7" name="Default Changelist" comment="//박지원 20220905 pass" />
+>>>>>>> 460fc220a936bf453d217a0328640e61b386f5c2
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
