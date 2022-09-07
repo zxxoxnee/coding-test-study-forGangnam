@@ -8,7 +8,7 @@
 학생에 대한 정보는 딕셔너리에 담으면 어떨까
 
 '''
-
+#런타임에러
 import sys
 from collections import defaultdict
 input=sys.stdin.readline #이건 메모리용량 줄여보려고 쓸거고
