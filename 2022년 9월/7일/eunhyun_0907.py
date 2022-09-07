@@ -32,16 +32,8 @@
 예제 출력 1  복사
 54
 
-heap을 만들자 
-=> 요소 (-인접한 학생의수, -비어있는 칸의 개수, (x, y))
-=> min heap 이니깐 
-
-
 '''
-import sys
 import heapq
-
-input = sys.stdin.readline
 
 n = int(input())
 
