@@ -1,7 +1,7 @@
 n = int(input())
 
 array = [[0]*n for _ in range(n)]
-student_dict = {} # 순 있는 딕셔너리 ?
+student_dict = {}
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 result = 0 # 만족도
