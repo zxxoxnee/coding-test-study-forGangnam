@@ -1,6 +1,7 @@
 # Boj 17413
 s = list(input())
 s += ' ' # 마지막 eof 처리
+#  readline() 함수를 사용해도 된다. readline() 은 더 이상 읽을 줄이 없을 경우 빈 문자열을 리턴한다 !
 i = 0
 
 while i < len(s):
