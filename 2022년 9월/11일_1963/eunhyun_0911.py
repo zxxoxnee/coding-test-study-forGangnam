@@ -63,8 +63,6 @@ for _ in range(n):
 
     visited.add(start)
 
-    # prime: int, visited: str, q: int
-
     while q:
 
         a, b, c, d, cnt = q.popleft()
