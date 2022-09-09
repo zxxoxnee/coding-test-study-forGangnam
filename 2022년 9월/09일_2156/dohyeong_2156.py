@@ -14,9 +14,9 @@ for i in range(n):
 
 d[0] = data[0]
 d[1] = data[1] + data[0]
-d[2] = max(d[1], d[2] + d[0], d[2] + d[1])
+d[2] = max(d[1], data[2] + data[0], data[2] + data[1])
 
 for i in range(3,n):
-    d[i] = max(d[i-1], d[2] + d[0], d[2] + d[1])
+    d[i] = max(d[i-1], data[i] + data[i-1] + d[i-3], data[i] + d[i-2])
 
 print(max(d))
