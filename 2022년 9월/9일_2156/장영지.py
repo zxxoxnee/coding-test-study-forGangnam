@@ -14,4 +14,4 @@ dp = [0] * n
 dp[0] = drink[0]
 dp[1] = drink[0]
 
-for i in range(3,n) :
+# for i in range(3,n) :
