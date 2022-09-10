@@ -39,3 +39,4 @@ for _ in range(t):
     else:
         print("Impossible")
 
+# 이런 경우 왜 bfs를 쓸까 ?
