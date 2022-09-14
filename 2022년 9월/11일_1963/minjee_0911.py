@@ -7,7 +7,7 @@ array = [True] * 10000
 for x in range(2, 100):
     if array[x]:
         y = 2
-        for y in range(x*2, 10000, x):
+        for y in range(x*2, 10000, x): # n 까지
             array[y] = False
 
 def solve(a, b):
