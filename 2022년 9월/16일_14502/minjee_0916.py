@@ -40,6 +40,7 @@ def check():
 def block(count):
     global answer
     if count == 3: # 벽 세개인 경우 검증하기
+        # temp = copy.deepcopy(array) ---> ????
         for i in range(n):
             for j in range(m):
                 temp[i][j] = array[i][j]
