@@ -29,5 +29,19 @@ def dfs(cnt):
             for j in range(m):
                 if res[i][j] == 2:
                     spread(i,j)
-        ans =
+
+        num = 0
+        for i in range(n):
+            for j in range(m):
+                if res[i][j] == 0:
+                    num += 1
+        ans = max(ans, num)
+        return
+    # 울타리 설치 dfs로 구현
+    for i in range(n):
+        for j in range(m):
+            if graph[i][j] == 0:
+                graph[i][j] = 1
+                cnt += 1
+                dfs(cnt)
 
