@@ -17,15 +17,15 @@ def solve(i, temp):
         plus -= 1
         solve(i+1, temp+data[i])
         plus += 1
-    elif minus != 0: # minus
+    if minus != 0: # minus
         minus -= 1
         solve(i+1, temp-data[i])
         minus += 1
-    elif multi != 0: #
+    if multi != 0: #
         multi -= 1
         solve(i+1, temp*data[i])
         multi += 1
-    elif div != 0:
+    if div != 0:
         div -= 1
         solve(i+1, int(temp/data[i]))
         div += 1
