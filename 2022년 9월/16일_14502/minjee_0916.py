@@ -1,5 +1,4 @@
 # 14502 연구소
-import copy
 from collections import deque
 
 n, m = map(int, input().split())
@@ -56,9 +55,9 @@ def block(count):
     for i in range(n):
         for j in range(m):
             if array[i][j] == 0:
-                array[i][j] = 1
                 count += 1
-                block(count)
+                array[i][j] = 1
+                block(count+1)
                 array[i][j] = 0 # 다시 back
                 count -= 1
 
