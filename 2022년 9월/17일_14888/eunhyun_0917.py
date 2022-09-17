@@ -58,69 +58,59 @@ N개의 수와 N-1개의 연산자가 주어졌을 때,
 '''
 
 n = int(input())
-arr = list(map(int, input().split()))
-
-oper_tmp = list(map(int, input().split()))
-oper_arr = []
-ans = -int(1e9)
+arr = list(map(int, input().rstrip().split()))
+o = list(map(int, input().rstrip().split()))
+o_arr = []
+val_max = -1000000000
+val_min = 1000000000
 visited = []
-oper_order = set()
 
 for i in range(4):
-    for j in range(oper_tmp[i]):
+    for j in range(o[i]):
         if i == 0:
-            oper_arr.append("+")
+            o_arr.append("+")
         elif i == 1:
-            oper_arr.append("-")
-        elif i == 1:
-            oper_arr.append("*")
+            o_arr.append("-")
+        elif i == 2:
+            o_arr.append("*")
         else:
-            oper_arr.append("/")
+            o_arr.append("/")
+            
+def find_ans(oper_pos, val_sum, arr_pos, visited):
+    global arr, o_arr, val_max, val_min
+    tmp_sum = 0
 
+    if o_arr[oper_pos] == "+":
+        tmp_sum = val_sum + arr[arr_pos]
+    elif o_arr[oper_pos] == "-":
+        tmp_sum = val_sum - arr[arr_pos]
+    elif o_arr[oper_pos] == "*":
+        tmp_sum = val_sum * arr[arr_pos]
+    elif o_arr[oper_pos] == "/":
 
-def find_oper(visited, s):
-    global oper_order, oper_arr
-    
-    if len(visited) == len(oper_arr):
-        oper_order.add(s)
+        if val_sum < 0:
+            t_val_sum = val_sum * -1
+            tmp_sum = (t_val_sum // arr[arr_pos]) * -1
+        else:
+            tmp_sum = val_sum // arr[arr_pos]
 
-    
-    for i in range(len(oper_arr)):
-        if i not in visited:
-            visited.append(i)
-            t = s + oper_arr[i]
-            find_oper(visited, t)
+    if len(visited) == n-1:
+        val_max = max(val_max, tmp_sum)
+        val_min = min(val_min, tmp_sum)
+        return
+
+    for j in range(n-1):
+        if j not in visited:
+            visited.append(j)
+            find_ans(j, tmp_sum, arr_pos+1, visited)
             visited.pop()
 
-            
 
-for i in range(len(oper_arr)):
+for i in range(n-1): # for operator order
+    arr_pos = 0
 
     visited.append(i)
-    find_oper(visited, oper_arr[i])
+    find_ans(i, arr[arr_pos], arr_pos + 1, visited)
     visited.pop()
 
-
-for i in oper_order:
-    tmp_ans = arr[0]
-    for j in range(n-1):
-        if i[j] == "+":
-            tmp_ans += arr[j+1]
-        
-        elif i[j] == "-":
-            tmp_ans -= arr[j+1]
-        
-        elif i[j] == "*":
-            tmp_ans *= arr[j+1]
-
-        elif i[j] == "/":
-            if tmp_ans < 0:
-                t = abs(tmp_ans)
-                t //= arr[j+1]
-                tmp_ans = -1 * t
-            else:
-                tmp_ans //= arr[j+1]
-    
-    ans = max(ans, tmp_ans)
-        
-print(ans)
+print(val_max, val_min)
