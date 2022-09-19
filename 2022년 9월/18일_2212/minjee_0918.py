@@ -1,4 +1,5 @@
 # 2212 센서
+# https://sinclairstudio.tistory.com/195
 n = int(input()) # sensor 개수
 k = int(input()) # 집중국 개수
 sensor = list(map(int, input().split()))
