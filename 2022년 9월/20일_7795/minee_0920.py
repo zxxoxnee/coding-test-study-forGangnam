@@ -5,15 +5,15 @@ for _ in range(t):
     array_a = list(map(int, input().split()))
     array_b = list(map(int, input().split()))
     # a가 b보다 큰 쌍의 개수
-    array_a.sort(reverse=True)
+    array_a.sort()
     array_b.sort()
     count = 0
+    j = 0
     for i in range(n):
-        if i > 0 and array_a[i] == array_a[i-1]:
-            continue
-        for j in range(m):
-            if j > 0 and array_b[j] == array_b[j-1]:
-                continue
-            if array_a[i] > array_b[j]:
-                count += 1
+        while True:
+            if j == m or array_a[i] <= array_b[j]:
+                count += j
+                break
+            else:
+                j += 1
     print(count)
