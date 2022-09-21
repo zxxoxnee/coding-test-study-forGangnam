@@ -24,20 +24,24 @@
 b = input()
 a = list(map(int, input().split()))
 
-ans = 0
-left, right =0, len(a)-1
-left_max, right_max = a[left], a[right]
+left, right =0, len(a) - 1
+lp, rp = 1, right - 1
+l_count, r_count = 0, 0
 
-while left<right:
-    left_max, right_max = max(a[left], left_max), max(a[right], right_max)
-
-    if left_max <= right_max:
-        ans += left_max - a[left]
-        left += 1
+while left < right:
+    if a[left] <= a[right]:
+        if a[left] - a[lp] > 0:
+            l_count += a[left] - a[lp]
+            lp += 1
+        else:
+            left = lp
+            lp += 1
     else:
-        ans += right_max - a[right]
-        right -= 1
-
-print(ans)
-
-
+        if a[right] - a[rp] > 0:
+            r_count += a[right] - a[rp]
+            rp -= 1
+        else:
+            right = rp
+            rp -= 1
+        
+print(l_count + r_count)
