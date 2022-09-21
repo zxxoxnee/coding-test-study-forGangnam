@@ -7,6 +7,8 @@ for i in range(1, w-1):
     left = max(block[:i])
     right = max(block[i+1:])
     height = min(left, right) # 둘 중에 작은 값이 기준이 된다
-    volume += height - block[i]
+
+    if height > block[i]: # 자기자신보다 큰지 확인
+        volume += height - block[i]
 
 print(volume)
