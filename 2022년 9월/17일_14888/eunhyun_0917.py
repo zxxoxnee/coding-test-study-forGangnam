@@ -59,75 +59,58 @@ N개의 수와 N-1개의 연산자가 주어졌을 때,
 
 n = int(input())
 arr = list(map(int, input().rstrip().split()))
-oper_input = list(map(int, input().rstrip().split()))
-
-oper_arr = []
-
+o = list(map(int, input().rstrip().split()))
+o_arr = []
 val_max = -1000000000
 val_min = 1000000000
-
 visited = []
-order = set()
 
 for i in range(4):
-    for j in range(oper_input[i]):
+    for j in range(o[i]):
         if i == 0:
-            oper_arr.append("+")
+            o_arr.append("+")
         elif i == 1:
-            oper_arr.append("-")
+            o_arr.append("-")
         elif i == 2:
-            oper_arr.append("*")
+            o_arr.append("*")
         else:
-            oper_arr.append("/")
+            o_arr.append("/")
+            
+def find_ans(oper_pos, val_sum, arr_pos, visited):
+    global arr, o_arr, val_max, val_min
+    tmp_sum = 0
 
+    if o_arr[oper_pos] == "+":
+        tmp_sum = val_sum + arr[arr_pos]
+    elif o_arr[oper_pos] == "-":
+        tmp_sum = val_sum - arr[arr_pos]
+    elif o_arr[oper_pos] == "*":
+        tmp_sum = val_sum * arr[arr_pos]
+    elif o_arr[oper_pos] == "/":
 
-def find_order(visited, s):
-    global oper_arr
+        if val_sum < 0:
+            t_val_sum = val_sum * -1
+            tmp_sum = (t_val_sum // arr[arr_pos]) * -1
+        else:
+            tmp_sum = val_sum // arr[arr_pos]
 
-    if len(visited) == len(oper_arr):
-        order.add(s)
+    if len(visited) == n-1:
+        val_max = max(val_max, tmp_sum)
+        val_min = min(val_min, tmp_sum)
         return
-    
-    for i in range(len(oper_arr)):
-        if i not in visited:
-            visited.append(i)
-            find_order(visited, s + oper_arr[i])
+
+    for j in range(n-1):
+        if j not in visited:
+            visited.append(j)
+            find_ans(j, tmp_sum, arr_pos+1, visited)
             visited.pop()
 
-def find_ans(order):
-    global val_max, val_min, arr
-    
 
-    for i in order:
-        val_sum = arr[0]
+for i in range(n-1): # for operator order
+    arr_pos = 0
 
-        for j in range(len(i)):
-        
-            if i[j] == "+":
-                val_sum += arr[j+1]
-
-            elif i[j] == "-":
-                val_sum -= arr[j+1]
-
-            elif i[j] == "*":
-                val_sum *= arr[j+1]
-
-            elif i[j] == "/":
-                if val_sum < 0:
-                    tmp_val_sum = val_sum * (-1)
-                    val_sum = (tmp_val_sum // arr[j+1]) * (-1)
-                else:
-                    val_sum //= arr[j+1]
-    
-        val_max = max(val_max, val_sum)
-        val_min = min(val_min, val_sum)
-
-for i in range(len(oper_arr)):
     visited.append(i)
-    find_order(visited, oper_arr[i])
+    find_ans(i, arr[arr_pos], arr_pos + 1, visited)
     visited.pop()
 
-find_ans(order)
-
-print(val_max)
-print(val_min)
+print(val_max, val_min)

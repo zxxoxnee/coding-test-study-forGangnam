@@ -47,26 +47,21 @@ for _ in range(test_cnt):
     b.sort()
 
     a_pos = b_pos = 0
+  
 
     while a_pos < a_cnt and b_pos < b_cnt:
-
         if a[a_pos] <= b[b_pos]:
             a_pos += 1
             ans += b_pos
 
         else:
             b_pos += 1
-
-    if a_pos < a_cnt:
-        tmp = a_cnt - a_pos
-        ans += b_cnt * tmp
-
-    #for i in range(a_pos, a_cnt):
-    #   ans += b_cnt
+    
+    for i in range(a_pos, a_cnt):
+        ans += b_cnt
 
     print(ans)
 
 
 
             
-
