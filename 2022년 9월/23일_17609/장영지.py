@@ -8,5 +8,5 @@ for _ in range(t) :
     print(0)
   else :
     for i in range(len(s)) :
-      if s.count(i) == 1 :
-        s[]
+      # if s.count(i) == 1 :
+      #   # s[]
