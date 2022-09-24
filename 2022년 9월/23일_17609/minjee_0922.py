@@ -7,7 +7,7 @@ def solve(left, right):
             right -= 1
         else:
             # 오른쪽 문자열 제거
-            if left < right -1:
+            if left < right -1: # 인덱스 확인하기
                 temp = word[:right] + word[right+1:]
                 if temp[:] == temp[::-1]:
                     return 1
