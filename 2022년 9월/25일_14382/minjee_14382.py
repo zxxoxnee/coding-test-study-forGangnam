@@ -6,7 +6,7 @@ for i in range(t):
     n = int(input())
     now = n
     if n == 0:
-        print("Case #", i, ": INSOMNIA")
+        print('Case #'+str(i+1)+": INSOMNIA")
     else:
         count = 1
         while True:
@@ -17,7 +17,7 @@ for i in range(t):
                 else:
                     continue
             if sum(check.values()) == 10:
-                print("Case #",i, ": ",now)
+                print("Case #"+str(i+1)+ ": "+str(now)) # , 로 하면 공백열이 생겨버리므로 + 를 이용해서 문자열을 만들어야 함
                 break
             count += 1
             now = n * count
