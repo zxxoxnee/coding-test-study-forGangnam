@@ -11,11 +11,11 @@ def solution(board, skill):
         dp[r2 + 1][c1] -= degree
         dp[r1][c2 + 1] -= degree
         dp[r2 + 1][c2 + 1] += degree
-    # 누적합 계산
+    # 누적합 계산 (위 -> 아래)
     for i in range(n):
         for j in range(m):
             dp[i + 1][j] += dp[i][j]
-
+    # 누적합 계산 (왼쪽 -> 오른쪽)
     for i in range(n):
         for j in range(m):
             dp[i][j + 1] += dp[i][j]
